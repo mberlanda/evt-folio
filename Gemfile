@@ -17,7 +17,7 @@ gem 'haml-rails'
 gem 'simple_form'
 
 gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
-gem 'jquery-rails' # Use jquery as the JavaScript library
+# gem 'jquery-rails' # Use jquery as the JavaScript library
 gem 'react-rails', '~> 1.4.1' # User ReactJS
 # gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.

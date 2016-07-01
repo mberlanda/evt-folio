@@ -1,0 +1,29 @@
+!!!
+/ [if IE 8] <html lang="it" class="ie8 no-js">
+/ [if IE 9] <html lang="it" class="ie9 no-js">
+<!--[if !IE]><!-->
+%html{lang:"it"}
+  <!--<![endif]-->
+  %head
+    
+    %meta{charset:"utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0, user-scalable=no", name: "viewport"}/
+    %meta{content:"", name:"description"}/
+    %meta{content:"", name:"author"}/
+    -if content_for?(:page_title)
+      = yield :page_title
+    -else
+      %title Evt Folio
+    = render partial: 'layouts/stylesheets'
+    -if content_for?(:page_stylesheet)
+      =yield :page_stylesheet
+    = csrf_meta_tags
+
+  / Alternate Body Classes: .modern and .vintage
+  %body#page-top
+
+    = yield
+
+    = render partial: 'layouts/javascripts'
+    -if content_for?(:page_javascript)
+      =yield :page_javascript

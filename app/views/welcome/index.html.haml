@@ -1,0 +1,575 @@
+/ Navigation
+/ Note: navbar-default and navbar-inverse are both supported with this theme.
+%nav.navbar.navbar-inverse.navbar-fixed-top.navbar-expanded
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand.page-scroll{:href => "#page-top"}
+        %img.img-responsive{:alt => "", :src => asset_path('creative/logo.png')}/
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.hidden
+          %a.page-scroll{:href => "#page-top"}
+        %li
+          %a.page-scroll{:href => "#about"} About
+        %li
+          %a.page-scroll{:href => "#services"} Services
+        %li
+          %a.page-scroll{:href => "#process"} Process
+        %li
+          %a.page-scroll{:href => "#work"} Work
+        %li
+          %a.page-scroll{:href => "#contact"} Contact
+    / /.navbar-collapse
+  / /.container
+%header{:style => "background-image: url(#{asset_path('creative/bg-header.jpg')});"}
+  .intro-content
+    %img.img-responsive.img-centered{:alt => "", :src => asset_path("creative/profile.png")}/
+    .brand-name John Smith
+    %hr.colored/
+    .brand-name-subtext An Online Portfolio For Creatives
+  .scroll-down
+    %a.btn.page-scroll{:href => "#about"}
+      %i.fa.fa-angle-down.fa-fw
+%section#about
+  .container.wow.fadeIn
+    .row
+      .col-md-6
+        %img.img-responsive{:alt => "", :src => asset_path("creative/about.jpg")}/
+      .col-md-6.text-center
+        %h1 Hi, I'm John Smith
+        %hr.colored/
+        %p I am a freelance web designer, developer, and photographer based in San Francisco, California. I have a professional background in graphic design, and a degree in Computer Science from the University of Central California.
+        %p Whether your next project is an online store, website for your business, or a simple brochure, I'll be ready to help!
+%section#services.bg-gray
+  .container-fluid
+    .row.text-center
+      .col-lg-12.wow.fadeIn
+        %h1 This is what I do
+        %p I provide web design, web development, photography, and graphic design services.
+        %hr.colored/
+    .row.text-center.content-row
+      .col-md-3.col-sm-6.wow.fadeIn{"data-wow-delay" => ".2s"}
+        .about-content
+          %i.fa.fa-laptop.fa-4x
+          %h3 Web Design
+          %p This theme includes the retina.js plugin for easy retina image support so your images and graphics will look great on mobile devices!
+      .col-md-3.col-sm-6.wow.fadeIn{"data-wow-delay" => ".4s"}
+        .about-content
+          %i.fa.fa-code.fa-4x
+          %h3 Web Development
+          %p Vitality is built using Bootstrap 3, and is easy to edit and customize. LESS files are included as well for deeper customization.
+      .col-md-3.col-sm-6.wow.fadeIn{"data-wow-delay" => ".6s"}
+        .about-content
+          %i.fa.fa-camera-retro.fa-4x
+          %h3 Photography
+          %p When building this theme, we've paid close attention to how it looks on various screen sizes. Try it out on a phone or tablet!
+      .col-md-3.col-sm-6.wow.fadeIn{"data-wow-delay" => ".8s"}
+        .about-content
+          %i.fa.fa-paint-brush.fa-4x
+          %h3 Graphic Design
+          %p All of our themes are crafted with care, and we strive to make your experience as one of our customers the best as possible.
+%aside.cta-quote{:style => "background-image: url(#{asset_path('creative/bg-aside.jpg')});"}
+  .container
+    .row
+      .col-md-10.col-md-offset-1.wow.fadeIn
+        %span.quote
+          Good
+          %span.text-primary design
+          is finding that perfect balance between the way something
+          %span.text-primary looks
+          and how it
+          = succeed "." do
+            %span.text-primary functions
+        %hr.colored/
+        %a.btn.btn-outline-light.page-scroll{:href => "#contact"} Let's Find It
+%section#process.services
+  .container
+    .row.text-center
+      .col-lg-12.wow.fadeIn
+        %h2 My Process
+        %hr.colored/
+        %p Here is an overview of how I approach each new project.
+    .row.content-row
+      .col-md-4.wow.fadeIn{"data-wow-delay" => ".2s"}
+        .media
+          .pull-left
+            %i.fa.fa-clipboard
+          .media-body
+            %h3.media-heading Plan
+            %ul
+              %li Client interview
+              %li Gather consumer data
+              %li Create content strategy
+              %li Analyze research
+      .col-md-4.wow.fadeIn{"data-wow-delay" => ".4s"}
+        .media
+          .pull-left
+            %i.fa.fa-pencil
+          .media-body
+            %h3.media-heading Create
+            %ul
+              %li Build wireframe
+              %li Gather client feedback
+              %li Code development
+              %li Marketing review
+      .col-md-4.wow.fadeIn{"data-wow-delay" => ".6s"}
+        .media
+          .pull-left
+            %i.fa.fa-rocket
+          .media-body
+            %h3.media-heading Launch
+            %ul
+              %li Deploy website
+              %li Market product launch
+              %li Collect UX data
+              %li Quarterly maintenence
+%section#work.bg-gray
+  .container.text-center.wow.fadeIn
+    %h2 Case Studies
+    %hr.colored/
+    %p Here are some in depth case studies of larger projects that I've worked on in the past.
+%section.portfolio-carousel.wow.fadeIn
+  .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-1.jpg')})"}
+    .container-fluid
+      .row
+        .col-md-4.col-md-push-8
+          .project-details
+            %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
+            %span.project-name Project Name
+            %span.project-description Branding, Website Design
+            %hr.colored/
+            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal1"}
+              View Details
+              %i.fa.fa-long-arrow-right.fa-fw
+        .col-md-8.col-md-pull-4.hidden-xs
+          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('portfolio/mobile-screens.png')}/
+  .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-2.jpg')})"}
+    .container-fluid
+      .row
+        .col-md-4.col-md-push-8
+          .project-details
+            %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-2.png')}/
+            %span.project-name Project Name
+            %span.project-description Branding, Website Design
+            %hr.colored/
+            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal2"}
+              View Details
+              %i.fa.fa-long-arrow-right.fa-fw
+        .col-md-8.col-md-pull-4.hidden-xs
+          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('portfolio/tablet-screens.png')}/
+  .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-3.jpg')})"}
+    .container-fluid
+      .row
+        .col-md-4.col-md-push-8
+          .project-details
+            %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
+            %span.project-name Project Name
+            %span.project-description Branding, Website Design
+            %hr.colored/
+            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal3"}
+              View Details
+              %i.fa.fa-long-arrow-right.fa-fw
+        .col-md-8.col-md-pull-4.hidden-xs
+          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('portfolio/mobile-screens.png')}/
+  .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-4.jpg')})"}
+    .container-fluid
+      .row
+        .col-md-4.col-md-push-8
+          .project-details
+            %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-2.png')}/
+            %span.project-name Project Name
+            %span.project-description Branding, Website Design
+            %hr.colored/
+            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal4"}
+              View Details
+              %i.fa.fa-long-arrow-right.fa-fw
+        .col-md-8.col-md-pull-4.hidden-xs
+          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('portfolio/tablet-screens.png')}/
+%section
+  .container.text-center.wow.fadeIn
+    %h2 Portfolio
+    %hr.colored/
+    %p Here are some other projects that I've worked on.
+    .row.content-row
+      .col-lg-12
+        .portfolio-filter
+          %ul#filters.clearfix
+            %li
+              %span.filter.active{"data-filter" => "identity graphic logo web"} All
+            %li
+              %span.filter{"data-filter" => "identity"} Identity
+            %li
+              %span.filter{"data-filter" => "graphic"} Graphic
+            %li
+              %span.filter{"data-filter" => "web"} Web
+    .row
+      .col-lg-12
+        #portfoliolist
+          .portfolio.identity{"data-cat" => "identity", "data-toggle" => "modal", :href => "#portfolioModal1"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/identity/1.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Generic Inc.
+                  %span.text-category Brand Identity
+                .caption-bg
+          .portfolio.web{"data-cat" => "web", "data-toggle" => "modal", :href => "#portfolioModal2"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/web/1.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Brands
+                  %span.text-category Web Development
+                .caption-bg
+          .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal3"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/1.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Excellence
+                  %span.text-category Poster Design
+                .caption-bg
+          .portfolio.web{"data-cat" => "web", "data-toggle" => "modal", :href => "#portfolioModal4"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/web/2.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title YouTV
+                  %span.text-category Web Development
+                .caption-bg
+          .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal1"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/2.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Office Supplies
+                  %span.text-category Graphic Design
+                .caption-bg
+          .portfolio.web{"data-cat" => "web", "data-toggle" => "modal", :href => "#portfolioModal2"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/web/3.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Fooder
+                  %span.text-category Mobile App
+                .caption-bg
+          .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal3"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/3.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Mountain Tea
+                  %span.text-category Graphic Design
+                .caption-bg
+          .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal4"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/4.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Checkmark
+                  %span.text-category Graphic Design
+                .caption-bg
+          .portfolio.identity{"data-cat" => "identity", "data-toggle" => "modal", :href => "#portfolioModal1"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/identity/2.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Demish
+                  %span.text-category Brand Identity
+                .caption-bg
+          .portfolio.web{"data-cat" => "web", "data-toggle" => "modal", :href => "#portfolioModal2"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/web/4.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title OneRepublic
+                  %span.text-category Web Development
+                .caption-bg
+          .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal3"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/5.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Postable
+                  %span.text-category Graphic Design
+                .caption-bg
+          .portfolio.identity{"data-cat" => "identity", "data-toggle" => "modal", :href => "#portfolioModal4"}
+            .portfolio-wrapper
+              %img{:alt => "", :src => asset_path('portfolio/grid/identity/3.jpg')}/
+              .caption
+                .caption-text
+                  %a.text-title Simpli Nota
+                  %span.text-category Brand Identity
+                .caption-bg
+%section.testimonials.bg-gray
+  .container.wow.fadeIn
+    .row
+      .col-lg-10.col-lg-offset-1
+        .testimonials-carousel
+          .item
+            .row
+              .col-lg-12
+                %p.lead "Working with John Smith was both a valuable and rewarding experience."
+                %hr.colored/
+                %p.quote Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, temporibus, laborum, dignissimos doloremque corporis alias nostrum recusandae culpa id quisquam harum impedit sed sunt non obcaecati vero ipsam aut fugit?
+                .testimonial-info
+                  .testimonial-img
+                    %img.img-circle.img-responsive{:alt => "", :src => asset_path('testimonials/1.jpg')}/
+                  .testimonial-author
+                    %span.name Jim Walker
+                    %p.small CEO of GeneriCorp
+                    .stars
+                      %i.fa.fa-star
+                      %i.fa.fa-star
+                      %i.fa.fa-star
+                      %i.fa.fa-star
+                      %i.fa.fa-star
+          .item
+            .row
+              .col-lg-12
+                %p.lead "John is an excellent designer, and we got our project done on time and on budget."
+                %hr.colored/
+                %p.quote Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, temporibus, laborum, dignissimos doloremque corporis alias nostrum recusandae culpa id quisquam harum impedit sed sunt non obcaecati vero ipsam aut fugit?
+                .testimonial-info
+                  .testimonial-img
+                    %img.img-circle.img-responsive{:alt => "", :src => asset_path('testimonials/1.jpg')}/
+                  .testimonial-author
+                    %span.name Jim Walker
+                    %p.small CEO of GeneriCorp
+                    .stars
+                      %i.fa.fa-star
+                      %i.fa.fa-star
+                      %i.fa.fa-star
+                      %i.fa.fa-star
+                      %i.fa.fa-star
+%section.cta-form.bg-dark
+  .container.text-center
+    %h3 Subscribe to our newsletter!
+    %hr.colored/
+    .row
+      .col-lg-8.col-lg-offset-2
+        / MailChimp Signup Form
+        #mc_embed_signup
+          / Replace the form action in the line below with your MailChimp embed action! For more informatin on how to do this please visit the Docs!
+          %form#mc-embedded-subscribe-form{:action => "//startbootstrap.us3.list-manage.com/subscribe/post?u=531af730d8629808bd96cf489&id=afb284632f", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :role => "form", :target => "_blank"}
+            .input-group.input-group-lg
+              %input#mce-EMAIL.form-control{:name => "EMAIL", :placeholder => "Email address...", :type => "email"}/
+              %span.input-group-btn
+                %button#mc-embedded-subscribe.btn.btn-primary{:name => "subscribe", :type => "submit"} Subscribe!
+            #mce-responses
+              #mce-error-response.response{:style => "display:none"}
+              #mce-success-response.response{:style => "display:none"}
+        / End MailChimp Signup Form
+%section#contact
+  .container.wow.fadeIn
+    .row
+      .col-lg-12.text-center
+        %h2 Contact Me
+        %hr.colored/
+        %p I'd love to hear about your next project! Send me a message and I will see if I can help.
+    .row.content-row
+      .col-lg-8.col-lg-offset-2
+        %form#contactForm{:name => "sentMessage", :novalidate => ""}
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Name
+              %input#name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Name", :required => "", :type => "text"}/
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Email Address
+              %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", :placeholder => "Email Address", :required => "", :type => "email"}/
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Phone Number
+              %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Phone Number", :required => "", :type => "tel"}/
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Message
+              %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", :placeholder => "Message", :required => "", :rows => "5"}
+              %p.help-block.text-danger
+          %br/
+          #success
+          .row
+            .form-group.col-xs-12
+              %button.btn.btn-outline-dark{:type => "submit"} Send
+%a.btn.btn-block.btn-full-width{:href => "https://wrapbootstrap.com/theme/vitality-multipurpose-one-page-theme-WB02K3KK3"} Buy Vitality Now!
+%footer.footer{:style => "background-image: url(#{asset_path('bg-footer.jpg')})"}
+  .container.text-center
+    .row
+      .col-md-4.contact-details
+        %h4
+          %i.fa.fa-phone
+          Call
+        %p 555-213-4567
+      .col-md-4.contact-details
+        %h4
+          %i.fa.fa-map-marker
+          Visit
+        %p
+          3481 Melrose Place
+          = succeed "Beverly" do
+            %br/
+      .col-md-4.contact-details
+        %h4
+          %i.fa.fa-envelope
+          Email
+        %p
+          %a{:href => "mailto:mail@example.com"} mail@example.com
+    .row.social
+      .col-lg-12
+        %ul.list-inline
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-facebook.fa-fw.fa-2x
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-twitter.fa-fw.fa-2x
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-linkedin.fa-fw.fa-2x
+    .row.copyright
+      .col-lg-12
+        %p.small © 2015 Start Bootstrap Themes
+/ Portfolio Modals
+/ Example Modal 1
+#portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :style => "background-image: url(#{asset_path('creative/portfolio/bg-1.jpg')})", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
+            %h2 Project Title
+            %hr.colored/
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
+          .col-lg-12
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('portfolio/mobile-screens.png')}/
+          .col-lg-8.col-lg-offset-2
+            %ul.list-inline.item-details
+              %li
+                Client:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Start Bootstrap
+              %li
+                Date:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} April 2015
+              %li
+                Service:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Web Development
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close
+/ Example Modal 2
+#portfolioModal2.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :style => "background-image: url(#{asset_path('creative/portfolio/bg-2.jpg')})", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('client-logos/logo-2.png')}/
+            %h2 Project Title
+            %hr.colored/
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
+          .col-lg-12
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('portfolio/tablet-screens.png')}/
+          .col-lg-8.col-lg-offset-2
+            %ul.list-inline.item-details
+              %li
+                Client:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Start Bootstrap
+              %li
+                Date:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} April 2015
+              %li
+                Service:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Web Development
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close
+/ Example Modal 3
+#portfolioModal3.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :style => "background-image: url(#{asset_path('creative/portfolio/bg-3.jpg')})", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
+            %h2 Project Title
+            %hr.colored/
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
+          .col-lg-12
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('portfolio/mobile-screens.png')}/
+          .col-lg-8.col-lg-offset-2
+            %ul.list-inline.item-details
+              %li
+                Client:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Start Bootstrap
+              %li
+                Date:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} April 2015
+              %li
+                Service:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Web Development
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close
+/ Example Modal 4
+#portfolioModal4.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :style => "background-image: url(#{asset_path('creative/portfolio/bg-4.jpg')})", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('client-logos/logo-2.png')}/
+            %h2 Project Title
+            %hr.colored/
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
+          .col-lg-12
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('portfolio/tablet-screens.png')}/
+          .col-lg-8.col-lg-offset-2
+            %ul.list-inline.item-details
+              %li
+                Client:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Start Bootstrap
+              %li
+                Date:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} April 2015
+              %li
+                Service:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Web Development
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close
