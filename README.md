@@ -29,4 +29,5 @@ sudo service postgresql restart
 ```bash
 ~/evt-folio $ rails g simple_form:install
 ~/evt-folio $ rails g rspec:install
+~/evt-folio $ rails g react:install
 ```
