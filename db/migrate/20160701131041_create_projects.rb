@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :category, null: false
       t.text :description
       t.string :customer
+      t.string :location
       t.date :date
 
       t.timestamps null:false

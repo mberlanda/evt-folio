@@ -70,16 +70,30 @@
         .portfolio-filter
           %ul#filters.clearfix
             %li
-              %span.filter.active{"data-filter" => "identity graphic logo web"} All
+              %span.filter.active{"data-filter" => "identity graphic logo web oenology seminar"} All
             %li
               %span.filter{"data-filter" => "identity"} Identity
             %li
               %span.filter{"data-filter" => "graphic"} Graphic
             %li
               %span.filter{"data-filter" => "web"} Web
+            %li
+              %span.filter{"data-filter" => "oenology"}= t('projects.categories.oenology')
+            %li
+              %span.filter{"data-filter" => "seminar"}= t('projects.categories.seminar')
     .row
       .col-lg-12
         #portfoliolist
+          - @projects.each do |project|
+            .portfolio{:class => "#{project.category}", "data-cat" => "#{project.category}", "data-toggle" => "modal", :href => "#portfolioModal1"}
+              .portfolio-wrapper
+                %img{:alt => "", :src => asset_path("albi/portfolio/grid/#{project.category}/#{project.title}.jpg")}/
+                .caption
+                  .caption-text
+                    %a.text-title= t("projects.names.#{project.title}")
+                    %span.text-category= t("projects.categories.#{project.category}").capitalize
+                  .caption-bg
+
           .portfolio.identity{"data-cat" => "identity", "data-toggle" => "modal", :href => "#portfolioModal1"}
             .portfolio-wrapper
               %img{:alt => "", :src => asset_path('albi/portfolio/grid/identity/1.jpg')}/

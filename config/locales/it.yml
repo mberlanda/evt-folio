@@ -1,5 +1,16 @@
 it:
   title: Evt Folio
+  projects:
+    categories:
+      oenology: enologia
+      seminar: seminari
+    names:
+      uniwine: “UniWine” Talent Campus 2015
+      wine_education: "Educazione al bere"
+      collio_prize_2016: Premio Collio 2016
+      ficlu: Assemblea Nazionale Federazione Italiana Club e Centri Unesco
+      estoria_2015: èStoria 2015
+      mondovisioni: Rassegna "Mondovisioni - i documentari di Internazionale"
   views:
     albi:
       header:
