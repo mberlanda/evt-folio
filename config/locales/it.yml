@@ -1,2 +1,11 @@
 it:
-  empty: vuoto
+  title: Evt Folio
+  views:
+    albi:
+      header:
+        brand-name: Alberto Zen
+        subtext: Intraprendente Project Manager e Event Planner
+      about:
+        title: Piacere, mi chiamo Alberto Zen
+        par1: Eccomi intento a parlare con una sconosciuta ad un evento.
+        par2: Ovviamente ad un evento organizzato da me.

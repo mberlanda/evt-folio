@@ -10,7 +10,7 @@
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand.page-scroll{:href => "#page-top"}
-        %img.img-responsive{:alt => "", :src => asset_path('creative/logo.png')}/
+        %img.img-responsive{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
@@ -28,12 +28,12 @@
           %a.page-scroll{:href => "#contact"} Contact
     / /.navbar-collapse
   / /.container
-%header{:style => "background-image: url(#{asset_path('creative/bg-header.jpg')});"}
+%header{:style => "background-image: url(#{asset_path('albi/bg-header.jpg')});"}
   .intro-content
     %img.img-responsive.img-centered{:alt => "", :src => asset_path("creative/profile.png")}/
-    .brand-name John Smith
+    .brand-name= t('views.albi.header.brand-name')
     %hr.colored/
-    .brand-name-subtext An Online Portfolio For Creatives
+    .brand-name-subtext= t('views.albi.header.subtext')
   .scroll-down
     %a.btn.page-scroll{:href => "#about"}
       %i.fa.fa-angle-down.fa-fw
@@ -41,12 +41,12 @@
   .container.wow.fadeIn
     .row
       .col-md-6
-        %img.img-responsive{:alt => "", :src => asset_path("creative/about.jpg")}/
+        %img.img-responsive{:alt => "", :src => asset_path("albi/about.jpg")}/
       .col-md-6.text-center
-        %h1 Hi, I'm John Smith
+        %h1= t('views.albi.about.title')
         %hr.colored/
-        %p I am a freelance web designer, developer, and photographer based in San Francisco, California. I have a professional background in graphic design, and a degree in Computer Science from the University of Central California.
-        %p Whether your next project is an online store, website for your business, or a simple brochure, I'll be ready to help!
+        %p= t('views.albi.about.par1')
+        %p= t('views.albi.about.par2')
 %section#services.bg-gray
   .container-fluid
     .row.text-center
@@ -149,7 +149,7 @@
               View Details
               %i.fa.fa-long-arrow-right.fa-fw
         .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('portfolio/mobile-screens.png')}/
+          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('albi/portfolio/mobile-screens.png')}/
   .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-2.jpg')})"}
     .container-fluid
       .row
@@ -163,7 +163,7 @@
               View Details
               %i.fa.fa-long-arrow-right.fa-fw
         .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('portfolio/tablet-screens.png')}/
+          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('albi/portfolio/tablet-screens.png')}/
   .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-3.jpg')})"}
     .container-fluid
       .row
@@ -177,7 +177,7 @@
               View Details
               %i.fa.fa-long-arrow-right.fa-fw
         .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('portfolio/mobile-screens.png')}/
+          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('albi/portfolio/mobile-screens.png')}/
   .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-4.jpg')})"}
     .container-fluid
       .row
@@ -191,7 +191,7 @@
               View Details
               %i.fa.fa-long-arrow-right.fa-fw
         .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('portfolio/tablet-screens.png')}/
+          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('albi/portfolio/tablet-screens.png')}/
 %section
   .container.text-center.wow.fadeIn
     %h2 Portfolio
@@ -214,7 +214,7 @@
         #portfoliolist
           .portfolio.identity{"data-cat" => "identity", "data-toggle" => "modal", :href => "#portfolioModal1"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/identity/1.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/identity/1.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Generic Inc.
@@ -222,7 +222,7 @@
                 .caption-bg
           .portfolio.web{"data-cat" => "web", "data-toggle" => "modal", :href => "#portfolioModal2"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/web/1.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/web/1.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Brands
@@ -230,7 +230,7 @@
                 .caption-bg
           .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal3"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/1.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/graphic/1.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Excellence
@@ -238,7 +238,7 @@
                 .caption-bg
           .portfolio.web{"data-cat" => "web", "data-toggle" => "modal", :href => "#portfolioModal4"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/web/2.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/web/2.jpg')}/
               .caption
                 .caption-text
                   %a.text-title YouTV
@@ -246,7 +246,7 @@
                 .caption-bg
           .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal1"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/2.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/graphic/2.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Office Supplies
@@ -254,7 +254,7 @@
                 .caption-bg
           .portfolio.web{"data-cat" => "web", "data-toggle" => "modal", :href => "#portfolioModal2"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/web/3.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/web/3.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Fooder
@@ -262,7 +262,7 @@
                 .caption-bg
           .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal3"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/3.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/graphic/3.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Mountain Tea
@@ -270,7 +270,7 @@
                 .caption-bg
           .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal4"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/4.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/graphic/4.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Checkmark
@@ -278,7 +278,7 @@
                 .caption-bg
           .portfolio.identity{"data-cat" => "identity", "data-toggle" => "modal", :href => "#portfolioModal1"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/identity/2.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/identity/2.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Demish
@@ -286,7 +286,7 @@
                 .caption-bg
           .portfolio.web{"data-cat" => "web", "data-toggle" => "modal", :href => "#portfolioModal2"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/web/4.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/web/4.jpg')}/
               .caption
                 .caption-text
                   %a.text-title OneRepublic
@@ -294,7 +294,7 @@
                 .caption-bg
           .portfolio.graphic{"data-cat" => "graphic", "data-toggle" => "modal", :href => "#portfolioModal3"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/graphic/5.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/graphic/5.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Postable
@@ -302,7 +302,7 @@
                 .caption-bg
           .portfolio.identity{"data-cat" => "identity", "data-toggle" => "modal", :href => "#portfolioModal4"}
             .portfolio-wrapper
-              %img{:alt => "", :src => asset_path('portfolio/grid/identity/3.jpg')}/
+              %img{:alt => "", :src => asset_path('albi/portfolio/grid/identity/3.jpg')}/
               .caption
                 .caption-text
                   %a.text-title Simpli Nota
@@ -402,7 +402,7 @@
           .row
             .form-group.col-xs-12
               %button.btn.btn-outline-dark{:type => "submit"} Send
-%a.btn.btn-block.btn-full-width{:href => "https://wrapbootstrap.com/theme/vitality-multipurpose-one-page-theme-WB02K3KK3"} Buy Vitality Now!
+/%a.btn.btn-block.btn-full-width{:href => "https://wrapbootstrap.com/theme/vitality-multipurpose-one-page-theme-WB02K3KK3"} Buy Vitality Now!
 %footer.footer{:style => "background-image: url(#{asset_path('bg-footer.jpg')})"}
   .container.text-center
     .row
@@ -439,7 +439,7 @@
               %i.fa.fa-linkedin.fa-fw.fa-2x
     .row.copyright
       .col-lg-12
-        %p.small © 2015 Start Bootstrap Themes
+        %a.small{:href => "https://github.com/mberlanda"} © 2016 mabe
 / Portfolio Modals
 / Example Modal 1
 #portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :style => "background-image: url(#{asset_path('creative/portfolio/bg-1.jpg')})", :tabindex => "-1"}
@@ -456,7 +456,7 @@
             %hr.colored/
             %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
           .col-lg-12
-            %img.img-responsive.img-centered{:alt => "", :src => asset_path('portfolio/mobile-screens.png')}/
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('albi/portfolio/mobile-screens.png')}/
           .col-lg-8.col-lg-offset-2
             %ul.list-inline.item-details
               %li
@@ -489,7 +489,7 @@
             %hr.colored/
             %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
           .col-lg-12
-            %img.img-responsive.img-centered{:alt => "", :src => asset_path('portfolio/tablet-screens.png')}/
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('albi/portfolio/tablet-screens.png')}/
           .col-lg-8.col-lg-offset-2
             %ul.list-inline.item-details
               %li
@@ -522,7 +522,7 @@
             %hr.colored/
             %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
           .col-lg-12
-            %img.img-responsive.img-centered{:alt => "", :src => asset_path('portfolio/mobile-screens.png')}/
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('albi/portfolio/mobile-screens.png')}/
           .col-lg-8.col-lg-offset-2
             %ul.list-inline.item-details
               %li
@@ -555,7 +555,7 @@
             %hr.colored/
             %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
           .col-lg-12
-            %img.img-responsive.img-centered{:alt => "", :src => asset_path('portfolio/tablet-screens.png')}/
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('albi/portfolio/tablet-screens.png')}/
           .col-lg-8.col-lg-offset-2
             %ul.list-inline.item-details
               %li
