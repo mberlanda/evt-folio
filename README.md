@@ -25,7 +25,8 @@ sudo vim /etc/postgresql/9.4/main/pg_hba.conf
 sudo service postgresql restart
 ```
 
-####Simple Form Setup
+####Gem Setup
 ```bash
 ~/evt-folio $ rails g simple_form:install
+~/evt-folio $ rails g rspec:install
 ```
