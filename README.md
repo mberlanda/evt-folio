@@ -31,3 +31,9 @@ sudo service postgresql restart
 ~/evt-folio $ rails g rspec:install
 ~/evt-folio $ rails g react:install
 ```
+
+####Testing
+```bash
+~/evt-folio $ ./bin/rspec spec
+~/evt-folio $ ./bin/rake spec:javascript
+```

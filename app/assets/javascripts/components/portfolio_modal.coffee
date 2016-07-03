@@ -36,7 +36,7 @@ ModalBody = React.createClass
 
 modalBody = React.createFactory(ModalBody)
 
-window.PortfolioModal = React.createClass
+PortfolioModal = React.createClass
   displayName: "PortfolioModal"
 
   render: ->
@@ -45,15 +45,16 @@ window.PortfolioModal = React.createClass
       className: 'portfolio-modal modal fade'
       'aria-hidden': 'true'
       role: 'dialog'
-      style: { 'background-image': url(@props.bg_img_url)}
-      tabIndex: '-1'
+      style: {'background-image': 'url('+ @props.bg_img_url + ')'}
+      tabIndex: '-1'                                                            
       },
       modalContent
 
       modalBody {
         title: @props.title
-        description: @pros.description
+        description: @props.description
         customer: @props.customer
       }
 
+CustomComponents.PortfolioModal = PortfolioModal
 window.portfolioModal =  React.createFactory(PortfolioModal)
