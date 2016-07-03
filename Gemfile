@@ -18,7 +18,7 @@ gem 'simple_form'
 
 gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
 # gem 'jquery-rails' # Use jquery as the JavaScript library
-gem 'react-rails', '~> 1.4.1' # User ReactJS
+gem 'react-rails', '~> 1.4.1' # Use ReactJS
 # gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 
@@ -27,8 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the A
 group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 3.0'
-  gem 'jasmine-rails'
-  gem 'jasmine-jquery-rails'
+  gem 'jasmine-rails' # a test framework for javascript
+  gem 'jasmine-jquery-rails' # an helper library for jasmine
 end
 
 group :development do
