@@ -75,6 +75,7 @@ GEM
       ruby_parser (~> 3.5)
     i18n (0.7.0)
     jasmine-core (2.4.1)
+    jasmine-jquery-rails (2.0.3)
     jasmine-rails (0.12.5)
       jasmine-core (>= 1.3, < 3.0)
       phantomjs (>= 1.9)
@@ -206,6 +207,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   haml
   haml-rails
+  jasmine-jquery-rails
   jasmine-rails
   pg (~> 0.15)
   puma

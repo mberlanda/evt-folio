@@ -45,7 +45,7 @@ PortfolioModal = React.createClass
       className: 'portfolio-modal modal fade'
       'aria-hidden': 'true'
       role: 'dialog'
-      style: {'background-image': 'url('+ @props.bg_img_url + ')'}
+      style: {'background-image': 'url(\''+ @props.bg_img_url + '\')'}
       tabIndex: '-1'                                                            
       },
       modalContent

@@ -28,6 +28,7 @@ group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 3.0'
   gem 'jasmine-rails'
+  gem 'jasmine-jquery-rails'
 end
 
 group :development do
