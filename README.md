@@ -37,3 +37,15 @@ sudo service postgresql restart
 ~/evt-folio $ ./bin/rspec spec
 ~/evt-folio $ ./bin/rake spec:javascript
 ```
+
+####Dump heroku DB and load locally
+```bash
+~/evt-folio $ curl -o latest.dump `heroku pg:backups public-url --app APP_NAME`
+~/evt-folio $ $ sudo su postgres -c psql
+psql (9.4.8)
+Type "help" for help.
+
+postgres=# CREATE DATABASE db_name;
+
+~/evt-folio $ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U username -d db_name latest.dump
+```
