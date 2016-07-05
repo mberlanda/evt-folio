@@ -1,0 +1,10 @@
+- provide :page_title do
+  %title Show Project Name
+
+= render partial: 'navbar'
+
+.container
+  .container-title
+    %h3= t("projects.names.#{@project.title}")
+    %p= "#{@project.location}, #{@project.date}"
+  .container-body

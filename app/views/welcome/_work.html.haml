@@ -85,13 +85,13 @@
       .col-lg-12
         #portfoliolist
           - @projects.each do |project|
-            .portfolio{:class => "#{project.category}", "data-cat" => "#{project.category}", "data-toggle" => "modal", :href => "#portfolioModal1"}
+            .portfolio{:class => "#{project.category.name}", "data-cat" => "#{project.category.name}", "data-toggle" => "modal", :href => "#portfolioModal1"}
               .portfolio-wrapper
-                %img{:alt => "", :src => asset_path("albi/portfolio/grid/#{project.category}/#{project.title}.jpg")}/
+                %img{:alt => "", :src => asset_path("albi/portfolio/grid/#{project.category.name}/#{project.title}.jpg")}/
                 .caption
                   .caption-text
                     %a.text-title= t("projects.names.#{project.title}")
-                    %span.text-category= t("projects.categories.#{project.category}").capitalize
+                    %span.text-category= t("projects.categories.#{project.category.name}").capitalize
                   .caption-bg
 
           .portfolio.identity{"data-cat" => "identity", "data-toggle" => "modal", :href => "#portfolioModal1"}

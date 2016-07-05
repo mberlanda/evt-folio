@@ -1,0 +1,29 @@
+- table_fields = [:title, :category, :location, :date, :actions]
+- provide :page_title do
+  %title Projects Index
+
+= render partial: 'navbar'
+
+.container
+  .container-title
+    %h3 Projects Index
+    %br  
+  .container-body
+    %a{href: "#{new_project_path}"}
+      Nuovo Progetto
+    %br
+    .table-responsive#projects-table
+      %table.table.table-hover
+        %thead
+          - table_fields.each do |tf|
+            %th= tf.to_s
+        
+        %tbody
+          - @projects.each do |p|
+            %tr
+              %td= t("projects.names.#{p.title}")
+              %td= t("projects.categories.#{p.category.name}")
+              %td= p.location
+              %td= p.date
+              %td
+                %a{href: "#{project_path(id: p.id)}"}= "Modifica"
