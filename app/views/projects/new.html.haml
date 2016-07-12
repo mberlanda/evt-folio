@@ -2,9 +2,41 @@
   %title New Project
 
 = render partial: 'navbar'
-
 .container
-  .container-title
-    %h3 New Project
-    %br  
-  .container-body
+  .col-md-8.col-md-offset-2
+    .container-title
+      %h3 New Project
+      %br  
+    .container-body
+      = form_for @project do |f|
+        %fieldset.form-group
+          %label.col-md-3{:for => "project_title"} Title
+          .col-md-9
+            = f.text_field :title, :class => 'form-control', :placeholder => "Enter a project title"
+          %small.text-muted
+        %fieldset.form-group
+          %label.col-md-3{:for => "project_description"} Description
+          .col-md-9
+            = f.text_area :description, :class => 'form-control', :placeholder => "Enter a project description"
+        %fieldset.form-group
+          %label.col-md-3{:for => "project_location"} Location
+          .col-md-9
+            = f.text_field :location, :class => 'form-control', :placeholder => "Enter a project location"
+        %fieldset.form-group
+          %label.col-md-3{:for => "project_date"} Date
+          .col-md-9
+            = f.text_field :date, :class => 'form-control', :placeholder => "Enter a project date"
+        %fieldset.form-group
+          %label.col-md-3{:for => "project_customer"} Customer
+          .col-md-9
+            = f.text_field :customer, :class => 'form-control', :placeholder => "Enter a project customer"
+        = f.button :submit, :class => "btn btn-primary"
+
+- provide :page_javascript do
+  = javascript_include_tag "bootstrap-datepicker.js"
+  :javascript
+    $('#project_date').datepicker({
+      format: 'dd/mm/yyyy',
+      startDate: '-3d',
+      todayHighlight: true
+    });
