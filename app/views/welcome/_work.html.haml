@@ -4,62 +4,21 @@
     %hr.colored/
     %p Here are some in depth case studies of larger projects that I've worked on in the past.
 %section.portfolio-carousel.wow.fadeIn
-  .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-1.jpg')})"}
-    .container-fluid
-      .row
-        .col-md-4.col-md-push-8
-          .project-details
-            %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
-            %span.project-name Project Name
-            %span.project-description Branding, Website Design
-            %hr.colored/
-            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal1"}
-              View Details
-              %i.fa.fa-long-arrow-right.fa-fw
-        .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('albi/portfolio/mobile-screens.png')}/
-  .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-2.jpg')})"}
-    .container-fluid
-      .row
-        .col-md-4.col-md-push-8
-          .project-details
-            %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-2.png')}/
-            %span.project-name Project Name
-            %span.project-description Branding, Website Design
-            %hr.colored/
-            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal2"}
-              View Details
-              %i.fa.fa-long-arrow-right.fa-fw
-        .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('albi/portfolio/tablet-screens.png')}/
-  .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-3.jpg')})"}
-    .container-fluid
-      .row
-        .col-md-4.col-md-push-8
-          .project-details
-            %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
-            %span.project-name Project Name
-            %span.project-description Branding, Website Design
-            %hr.colored/
-            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal3"}
-              View Details
-              %i.fa.fa-long-arrow-right.fa-fw
-        .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('albi/portfolio/mobile-screens.png')}/
-  .item{:style => "background-image: url(#{asset_path('creative/portfolio/bg-4.jpg')})"}
-    .container-fluid
-      .row
-        .col-md-4.col-md-push-8
-          .project-details
-            %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-2.png')}/
-            %span.project-name Project Name
-            %span.project-description Branding, Website Design
-            %hr.colored/
-            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal4"}
-              View Details
-              %i.fa.fa-long-arrow-right.fa-fw
-        .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => asset_path('albi/portfolio/tablet-screens.png')}/
+  - @projects.each do |project|
+    .item{:style => "background-image: url(#{asset_path("creative/portfolio/bg-#{1 + project.id % 4}.jpg")})"}
+      .container-fluid
+        .row
+          .col-md-4.col-md-push-8
+            .project-details
+              %img.img-responsive.client-logo{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
+              %span.project-name= t("projects.names.#{project.title}")
+              %span.project-description= t("projects.categories.#{project.category.name}").capitalize
+              %hr.colored/
+              %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal#{project.id}"}
+                Scopri Dettagli
+                %i.fa.fa-long-arrow-right.fa-fw
+          .col-md-8.col-md-pull-4.hidden-xs
+            %img.img-responsive.portfolio-image{:alt => "", :src => asset_path("albi/portfolio/grid/#{project.category.name}/#{project.title}.jpg")}/
 %section
   .container.text-center.wow.fadeIn
     %h2 Portfolio
@@ -85,7 +44,7 @@
       .col-lg-12
         #portfoliolist
           - @projects.each do |project|
-            .portfolio{:class => "#{project.category.name}", "data-cat" => "#{project.category.name}", "data-toggle" => "modal", :href => "#portfolioModal1"}
+            .portfolio{:class => "#{project.category.name}", "data-cat" => "#{project.category.name}", "data-toggle" => "modal", :href => "#portfolioModal#{project.id}"}
               .portfolio-wrapper
                 %img{:alt => "", :src => asset_path("albi/portfolio/grid/#{project.category.name}/#{project.title}.jpg")}/
                 .caption
@@ -190,3 +149,6 @@
                   %a.text-title Simpli Nota
                   %span.text-category Brand Identity
                 .caption-bg
+
+- @projects.each do |project|
+  = render partial:'portfolio_modal', locals: {project: project}

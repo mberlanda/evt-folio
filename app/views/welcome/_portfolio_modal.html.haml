@@ -1,0 +1,32 @@
+.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :style => "background-image: url(#{asset_path("creative/portfolio/bg-#{1 + project.id % 4}.jpg")})", :tabindex => "-1", id: "portfolioModal#{project.id}"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('client-logos/logo-1.png')}/
+            %h2= t("projects.names.#{project.title}")
+            %hr.colored/
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.
+          .col-lg-12
+            %img.img-responsive.img-centered{:alt => "", :src => asset_path('albi/portfolio/mobile-screens.png')}/
+          .col-lg-8.col-lg-offset-2
+            %ul.list-inline.item-details
+              %li
+                Client:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Start Bootstrap
+              %li
+                Date:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} April 2015
+              %li
+                Service:
+                %strong
+                  %a{:href => "http://startbootstrap.com"} Web Development
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close

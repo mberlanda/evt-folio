@@ -5,7 +5,7 @@ window.PortfolioListElem = React.createClass
 
   render: ->
     div
-      className: 'portfolio ' + @props.category
+      className: @props.category + ' portfolio mix_all'
       'data-cat': @props.category
       'data-toggle': 'modal'
       href: '#portfolioModal1'
