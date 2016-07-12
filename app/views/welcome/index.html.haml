@@ -1,3 +1,21 @@
+- provide :page_stylesheet do
+  :css
+    .rwd-video {
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      position: relative;
+    }
+    .rwd-video iframe,
+    .rwd-video object,
+    .rwd-video embed {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
 / Navigation
 / Note: navbar-default and navbar-inverse are both supported with this theme.
 %nav.navbar.navbar-inverse.navbar-fixed-top.navbar-expanded
@@ -93,7 +111,8 @@
       %br
     .row
       .col-md-10.col-md-offset-1.wow.fadeIn
-        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/q-bdlWnRJmI", :width => "420"}
+        .rwd-video
+          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/q-bdlWnRJmI", :width => "420"}
 
 %section#process.services
   .container
